@@ -1,4 +1,4 @@
-#Tue Nov 10 08:12:31 COT 2020
-base.0=F\:\\BIBLIOTECAS\\Documents\\proyecto\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Tue Nov 10 15:33:12 COT 2020
+base.0=F\:\\BIBLIOTECAS\\Documents\\tesis\\Tesis\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

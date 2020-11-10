@@ -163,7 +163,8 @@ class Procesos {
       
     }
 
-    Future<double> velocidadReal() async {   
+    Future<double> velocidadReal() async {
+
           _velocidadReal = rel.vv0 * _v0; 
           _alturaVelocidad = (_velocidadReal*_velocidadReal)/(2*9.8); 
           _alturaVelocidad = double.parse(_alturaVelocidad.toStringAsFixed(3)); 
@@ -174,7 +175,7 @@ class Procesos {
     } 
 
     double radioHidra(){
-      _radioHidraulico = rel.dD * (_diametroInt/4);
+      _radioHidraulico = rel.rr0 * (_diametroInt/4);
       _radioHidraulico = double.parse(_radioHidraulico.toStringAsFixed(3)); 
       return _radioHidraulico;  
     }

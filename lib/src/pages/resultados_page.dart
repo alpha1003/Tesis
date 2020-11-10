@@ -103,18 +103,18 @@ Widget _dibujarGrafica(){
       primaryYAxis: NumericAxis(
         title: AxisTitle(text: "Cota 1(m)"),  
         majorGridLines: MajorGridLines(width: 0),
-        minimum: (p1.cotaR1*0.90),
-        maximum: (p1.cotaR1)+p1.cotaR1*0.02,
-        interval: 1,
+        minimum: (p1.cotaR1*0.95),
+        maximum: (p1.cotaR1),
+        interval: 0.2,
         
       ),
       axes: [
           NumericAxis(
              title: AxisTitle(text: "cota 2(m)"),
              name: "Yaxis",
-             minimum: (p1.cotaR1*0.90), 
-             maximum: (p1.cotaR1)+p1.cotaR1*0.02,
-             interval: 1,
+             minimum: (p1.cotaR1*0.95), 
+             maximum: (p1.cotaR1),
+             interval: 0.2,
              opposedPosition: true,
              majorGridLines: MajorGridLines(width: 0),
              
@@ -131,29 +131,12 @@ Widget _dibujarGrafica(){
 List<ChartSeries<_SalesData,num>> _getSeries(){
 
   final data = <_SalesData>[
-                    _SalesData(0, 0.2,0.4),
-                    _SalesData(10, 0.20,0.4),
-                    _SalesData(20, 0.2,0.4),
-                    _SalesData(30, 0.2,0.4),
-                    _SalesData(40, 0.2,0.4),
-                    _SalesData(50, 0.2,0.4),
-                    _SalesData(60, 0.2,0.4),
-                    _SalesData(67, 0.19,0.4),
-                    _SalesData(70, 0.18,0.4),
-                    _SalesData(80, 0.16,0.4),
-                    _SalesData(90, 0.14,0.4),
-                    _SalesData(100, 0.11,0.4),
+                    _SalesData(0, p1.cotaR1,p1.cotaR1),
+                    _SalesData(p1.longitud, p1.cotaR2,p1.cotaR2),
             ];
 
   return <ChartSeries<_SalesData, num>>[
-              //AreaSeries<_SalesData, num>(
-              //    dataSource: data,
-              //    xValueMapper: (_SalesData sales, _) => sales.x,
-              //    yValueMapper: (_SalesData sales, _) => sales.y1,
-              //    name: "H",
-              //    // Enable data label
-              //    dataLabelSettings: DataLabelSettings(isVisible: false)
-              //),
+              
               LineSeries<_SalesData, num>(
                   color: Colors.black,
                   width: 2.0,
@@ -186,6 +169,18 @@ List<ChartSeries<_SalesData,num>> _getSeries(){
                   yValueMapper: (_SalesData sales, _) => sales.y1,
                   yAxisName: "Yaxis",
                   name: "COTA LAMINA",
+
+                  // Enable data label
+                  dataLabelSettings: DataLabelSettings(isVisible: false)
+              ),
+              LineSeries<_SalesData, num>(
+                  color: Colors.yellow,
+                  width: 2.0,
+                  dataSource: data,
+                  xValueMapper: (_SalesData sales, _) => sales.x,
+                  yValueMapper: (_SalesData sales, _) => sales.y1,
+                  yAxisName: "Yaxis",
+                  name: "COTA RASANTE",
 
                   // Enable data label
                   dataLabelSettings: DataLabelSettings(isVisible: false)
@@ -233,7 +228,7 @@ List<_SalesData> _calcularRecta(double cota1){
             lista.add(obj);
         }
         return lista;   
-  }
+    }
 }
 
 class ProcesoDataSource extends DataTableSource {
@@ -263,6 +258,7 @@ class ProcesoDataSource extends DataTableSource {
           DataCell(Text('${p.rel.rr0}')),
           DataCell(Text('${p.rel.hd}')),
           DataCell(Text('${p.v0}')),
+          DataCell(Text('${p.velReal}')),
           DataCell(Text('${p.altVelocidad}')),
           DataCell(Text('${p.radioHidraulico}')),
           DataCell(Text('${p.esfuerzoCortante}')),

@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     
     return Scaffold(
         appBar: AppBar(
-            title: Text("SewerApp"),
+            title: Text("Sewerage"),
         ),
         drawer: _drawer(),
         body:  SingleChildScrollView(
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             DrawerHeader(
               child: Text(
-                "SewerApp",
+                "Sewerage",
                 style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.w300,
