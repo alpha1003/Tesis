@@ -1,8 +1,8 @@
-import 'package:Alcantarillado/pasos.dart';
 import 'package:flutter/material.dart';
-import 'package:Alcantarillado/resultados_page.dart';
-import 'entradas.dart';
-import 'normatividad_page.dart';
+import 'package:proyecto/src/pages/home_page.dart';
+import 'package:proyecto/src/pages/pasos.dart';
+import 'package:proyecto/src/pages/resultados_page.dart';
+import 'src/pages/normatividad_page.dart';
 
  
 void main() => runApp(MyApp());
@@ -15,19 +15,17 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> { 
 
-  
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp( 
       debugShowCheckedModeBanner: false,
       //theme: ThemeData.dark(),
-      title: 'Alcantarillado',
+      title: 'SewerApp',
       initialRoute: "inicio",
       routes: <String, WidgetBuilder>{
-        "inicio"        : (BuildContext context) => Entradas(),
+        "inicio"       : (BuildContext context) => HomePage(),
         "normatividad"  : (BuildContext context) => Normatividad(),
-        "resultados"    : (BuildContext context) => Resultados(),
+        "resultados"    : (BuildContext context) => ResultadosPage(),
         "pasos"         : (BuildContext context) => Pasos(), 
       }
     );

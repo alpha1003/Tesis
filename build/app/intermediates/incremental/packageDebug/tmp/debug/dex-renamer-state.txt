@@ -1,4 +1,4 @@
-#Thu Jul 23 14:06:31 COT 2020
-base.0=/home/alpha/Escritorio/Flutter/tesis/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Tue Nov 10 08:12:31 COT 2020
+base.0=F\:\\BIBLIOTECAS\\Documents\\proyecto\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
